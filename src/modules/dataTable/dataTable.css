@@ -1,0 +1,36 @@
+.client-table {
+	display: flex;
+	flex-direction: column;
+	margin-top: 5em;
+	padding: 0 10%;
+}
+
+#table-menu>button{
+	transform: rotate(90deg);
+}
+
+.client-table>.md-data-table--responsive{
+	min-height: 50em;
+	height: inherit;
+}
+
+.md-btn--fixed {
+	z-index: 12 !important;
+}
+
+.client-footer {
+	height: 4em;
+	align-items: center;
+	justify-content: space-between !important;
+	padding: 0 10em;
+}
+
+.footer-left {
+	display: flex;
+	justify-content: space-between;
+	width: 13em;
+}
+
+.footer-left>a{
+	color: #000;
+}

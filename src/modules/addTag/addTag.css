@@ -1,0 +1,27 @@
+.addTag-container {
+	display: flex;
+	flex-direction: column;
+	margin: 0 10%;
+}
+
+.tags-search-box, .tags-select{
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	margin-left: 10%;
+	margin-top: 3em;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.addTag-container>h1{
+	margin-top: 1em;
+}
+
+.addTag-bottom-btn-group {
+	display: flex;
+	flex-direction: row-reverse;
+	width: 30%;
+	margin-top: 3em;
+	margin-left: 35%;
+}

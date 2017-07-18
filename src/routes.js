@@ -1,13 +1,21 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-import {App} from './containers';
-import {Dashboard} from './containers';
-import {Counter} from './containers';
+import { 
+	App,
+	AddOrCreateTag,
+	ClientTable
+} from './modules';
+import { Dashboard } from './modules';
+import { SearchBox } from './modules';
+import { ContactDetails } from './modules';
 
 export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={Dashboard} />
-		<Route path="counter" component={Counter}/>
-	</Route>
+		<Route path="search" component={SearchBox} />
+		<Route path="contact-details" component={ContactDetails} />
+		<Route path="tags" component={AddOrCreateTag} />
+		<Route path="contact-table" component={ClientTable} /> 
+ 	</Route>
 );

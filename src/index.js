@@ -1,22 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin'
-import { Router, browserHistory } from 'react-router'
-import { Provider } from 'react-redux'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import WebFontLoader from 'webfontloader';
+import routes from './routes';
 
-import {store} from './store'
-import routes from './routes'
+import './index.css';
+// react-select css
+import 'react-select-plus/dist/react-select-plus.css';
 
-import './index.css'
 
-injectTapEventPlugin()
+WebFontLoader.load({
+  google: {
+    families: ['Roboto:300,400,500,700', 'Material Icons'],
+  },
+});
+
 
 ReactDOM.render(
-	<MuiThemeProvider>
-		<Provider store={store}>
-	  	<Router history={browserHistory} routes={routes} />
-	  </Provider>
-  </MuiThemeProvider>,
+	  	<Router history={browserHistory} routes={routes} />,
   document.getElementById('root')
 );
