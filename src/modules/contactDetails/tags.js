@@ -8,12 +8,24 @@ export class TagDetails extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			chips: [
+			"Text Chip",
+			"Javascript",
+			"React",
+			"ReactJS",
+			"ReactNative",
+			"MongoDB",
+			"NodeJS",
+			"ExpressJS",
+			"Firebase",
+			"SQL",
+			"Mongoose"],
 			multi: true,
 			multiValue: [],
 			options: [
-				{ value: 'R', label: 'Red' },
-				{ value: 'G', label: 'Green' },
-				{ value: 'B', label: 'Blue' }
+				{ value: 'Red', label: 'Red' },
+				{ value: 'Green', label: 'Green' },
+				{ value: 'Blue', label: 'Blue' }
 			],
 			value: undefined
 
@@ -22,33 +34,27 @@ export class TagDetails extends Component {
 
 	handleOnChange (value) {
 		const { multi } = this.state;
+		const tagsArray = value.map((tag) => tag.value);
 		if (multi) {
 			this.setState({ multiValue: value });
 		} else {
 			this.setState({ value });
 		}
+		this.setState({ addedChips: this.state.chips.concat(tagsArray) })
 	}
 
+	handleClick() {
+		this.setState({ chips: this.state.addedChips})
+	}
 	render() {
 		const { multi, multiValue, options, value } = this.state;
 		return (
 			<div className="tags-main-div">
 				<div className="tags-container">
 					<div className="chips-container">
-						<Chip label="Text Chip" removable />
-						<Chip label="Javascript" removable />
-						<Chip label="React" removable />
-						<Chip label="ReactJS" removable />
-						<Chip label="ReactNative" removable />
-						<Chip label="MongoDB" removable />
-						<Chip label="NodeJS" removable />
-						<Chip label="ExpressJS" removable />
-						<Chip label="SqlLite" removable />
-						<Chip label="Firebase" removable />
-						<Chip label="Redux" removable />
-						<Chip label="Webpack" removable />
-						<Chip label="Babel" removable />
-						<Chip label="JSON" removable />
+						{ 
+							this.state.chips.map((value, i) => <Chip key={i} label={value} removable />)
+						}
 					</div>
 					<div className="chip-select">
 						<Creatable
@@ -58,6 +64,7 @@ export class TagDetails extends Component {
 							value={multi ? multiValue : value}
 							placeholder="Select/Add a new tag"
 						/>
+						<Button onClick={() => this.handleClick()} raised primary label="Add this tag"/>
 					</div>
 				</div>
 				<div className="tags-btn-group">

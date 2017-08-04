@@ -12,13 +12,13 @@ const nav = <Button key="nav" icon>menu</Button>;
 const actions = (
 	<div>
   	<Button key="search" icon>search</Button>
-  		<MenuButton
-        icon
-        className="menu-button"
-        position={MenuButton.Positions.BOTTOM_RIGHT}
-        id="avatar-menu"
-        buttonChildren={<Avatar src={process.env.PUBLIC_URL+"/avatar.jpg"} role="presentation" alt="Your Avatar" />}
-      >
+		<MenuButton
+      icon
+      className="menu-button"
+      position={MenuButton.Positions.BOTTOM_RIGHT}
+      id="avatar-menu"
+      buttonChildren={<Avatar src={process.env.PUBLIC_URL+"/menuavatar.jpg"} role="presentation" alt="Your Avatar" />}
+    >
       <ListItem primaryText="Item 1" />
       <ListItem primaryText="Item 2" />
       <ListItem primaryText="Item 3" />
@@ -26,7 +26,7 @@ const actions = (
     </MenuButton>
   </div>
 )
-const title = <img src={process.env.PUBLIC_URL+"/logo.png"} style={{ width: 225, height: 45, margin: 10 }} alt="logo"/>
+// const title = <img src={process.env.PUBLIC_URL+"/logo.png"} style={{ width: 225, height: 45, margin: 10 }} alt="logo"/>
 
 class Navbar extends Component{
 	render() {
@@ -35,7 +35,7 @@ class Navbar extends Component{
         colored
         nav={nav}
         actions={actions}
-        title={title}
+        title={'Some Title'}
         id="Toolbar"
       />
 		);

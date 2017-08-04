@@ -28,7 +28,8 @@
 .footer-left {
 	display: flex;
 	justify-content: space-between;
-	width: 13em;
+	width: 15em;
+	align-items: center;
 }
 
 .footer-left>a{

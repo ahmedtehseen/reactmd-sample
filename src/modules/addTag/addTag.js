@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, TextField, SelectField } from 'react-md';
+import { Button, TextField, Autocomplete } from 'react-md';
 import { Link } from 'react-router';
 
 import './addTag.css';
@@ -24,19 +24,17 @@ export class AddOrCreateTag extends Component {
 			    />
 				</div>
 				<div className="tags-select">
-					<SelectField
-	          id="tags"
-	          label="Select a new tag"
-	          placeholder="Select a new Tag"
-	          menuItems={Items}
-	          className="md-cell"
-	          helpOnFocus
-	          helpText="Select some state for me"
+					<Autocomplete
+	          id="programmingLanguages"
+	          label="Select (or create) a group"
+	          className="md-cell md-cell--4"
+	          data={Items}
+	          autoComplete='on'
 	        />
 				</div>
 				<div className="addTag-bottom-btn-group">
 					<Link to="/contact-details">
-						<Button raised primary label="Save Tag" />
+						<Button raised primary label="Save" />
 					</Link>
 				</div>
 			</div>

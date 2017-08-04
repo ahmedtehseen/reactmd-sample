@@ -178,15 +178,43 @@ section.md-tabs-container {
 
 .chip-select {
 	display: flex;
-	flex-direction: column;
-	align-items:  flex-end;
+	flex-direction: row;
+	justify-content: space-between;  
+	margin-top: 1em;
 	margin-left:  1em;
-	margin-right: 1em; 
-	margin-top: -3em;
+	margin-right: 1em;
+	align-items: baseline;
+	/*margin-top: -3em;*/
 }
 
 .chip-select>.Select{
-	width: 30%;
+	width: 35%;
 	margin-bottom: 1em;
 }
 /*Tags end*/
+
+
+.Select--multi .Select-value {
+    background-color: #e0e0e0 !important;
+    border-radius: 12px !important;
+    border: 1px solid #e0e0e0 !important;
+    color: rgba(0, 0, 0, 0.87) !important;
+    padding-left: 0.5em;
+    transition-duration: 0.15s;
+    transition-property: box-shadow, background;
+}
+
+
+.Select--multi .Select-value-icon {
+    background: rgba(0, 0, 0, 0.54) !important;
+    transform: rotate3d(0, 0, 1, 92deg) !important;
+    border-radius: 50% !important;
+    color: white !important;
+    padding: 2px 6px 4px !important;
+}
+
+
+.Select--multi .Select-value:hover, .Select--multi .Select-value:focus {
+    background-color: #616161 !important;
+    color: #e0e0e0 !important;
+}
